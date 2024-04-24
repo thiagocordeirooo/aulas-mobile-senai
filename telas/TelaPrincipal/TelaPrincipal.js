@@ -10,6 +10,9 @@ const TelaPrincipal = (props) => {
       <BotaoCustomizado cor='primaria' onPress={() => props.navigation.navigate(TELAS.TELA_CONTADOR)}>
         Tela Contador
       </BotaoCustomizado>
+      <BotaoCustomizado cor='secundaria' onPress={() => props.navigation.navigate(TELAS.TELA_FORMULARIO)}>
+        Tela Formulário
+      </BotaoCustomizado>
     </View>
   );
 };
