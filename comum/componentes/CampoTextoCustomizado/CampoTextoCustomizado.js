@@ -1,11 +1,11 @@
 import { Text, TextInput, View } from 'react-native';
 import campoTextoCustomizadoStyle from './CampoTextoCustomizadoStyle';
 
-const CampoTextoCustomizado = (props) => {
+const CampoTextoCustomizado = ({ label, style, ...props }) => {
   return (
     <View>
-      <Text>{props.label}</Text>
-      <TextInput style={campoTextoCustomizadoStyle.campoTexto} {...props} />
+      <Text>{label}</Text>
+      <TextInput style={[campoTextoCustomizadoStyle.campoTexto, style]} {...props} />
     </View>
   );
 };
