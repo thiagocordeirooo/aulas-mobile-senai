@@ -23,7 +23,7 @@ export default function App() {
   return (
     <View style={estilos.todoApp}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ cardStyle: { flex: 1 } }}>
           <Stack.Screen
             name={TELAS.TELA_PRINCIPAL}
             component={TelaPrincipal}

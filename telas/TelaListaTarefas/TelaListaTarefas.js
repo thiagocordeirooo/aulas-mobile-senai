@@ -27,7 +27,10 @@ const TelaListaTarefas = () => {
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.containerCampoAdicionar}>
-        <CampoTextoCustomizado label='Descrição da tarefa' value={campoDescricao} onChangeText={setCampoDescricao} />
+        <View style={{ flex: 1 }}>
+          <CampoTextoCustomizado label='Descrição Tarefa' value={campoDescricao} onChangeText={setCampoDescricao} />
+        </View>
+
         <BotaoCustomizado cor='primaria' onPress={adicinarTarefa}>
           +
         </BotaoCustomizado>
