@@ -25,14 +25,14 @@ export default function App() {
     <View style={estilos.todoApp}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ cardStyle: { flex: 1 } }}>
-          <Stack.Group screenOptions={{ headerShown: false }}>
-            <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
-          </Stack.Group>
-
           <Stack.Screen name={TELAS.TELA_PRINCIPAL} component={TelaPrincipal} options={{ title: 'Principal', headerLeft: null }} />
           <Stack.Screen name={TELAS.TELA_CONTADOR} component={TelaContador} options={{ title: 'Contador' }} />
           <Stack.Screen name={TELAS.TELA_FORMULARIO} component={TelaFormulario} options={{ title: 'Formulário' }} />
           <Stack.Screen name={TELAS.TELA_LISTA_TAREFAS} component={TelaListaTarefas} options={{ title: 'Lista Terefas' }} />
+
+          <Stack.Group screenOptions={{ headerShown: false }}>
+            <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
+          </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
 

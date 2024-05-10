@@ -7,6 +7,9 @@ const estilos = StyleSheet.create({
     flex: 1,
   },
   itemTarefa: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     backgroundColor: CORES.CINZA,
     padding: 20,
     margin: 8,
@@ -20,7 +23,7 @@ const estilos = StyleSheet.create({
   },
   containerCampoAdicionar: {
     flexDirection: 'row',
-    alignItems: 'end',
+    alignItems: 'flex-end',
     padding: 16,
     gap: 16,
   },
