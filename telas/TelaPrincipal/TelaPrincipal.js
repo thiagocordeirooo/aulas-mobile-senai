@@ -10,11 +10,17 @@ const TelaPrincipal = (props) => {
       <BotaoCustomizado cor='primaria' onPress={() => props.navigation.navigate(TELAS.TELA_CONTADOR)}>
         Tela Contador
       </BotaoCustomizado>
+
       <BotaoCustomizado cor='secundaria' onPress={() => props.navigation.navigate(TELAS.TELA_FORMULARIO)}>
         Tela Formulário
       </BotaoCustomizado>
+
       <BotaoCustomizado cor='primaria' onPress={() => props.navigation.navigate(TELAS.TELA_LISTA_TAREFAS)}>
         Lista de Tarefas
+      </BotaoCustomizado>
+
+      <BotaoCustomizado cor='secundaria' onPress={() => props.navigation.navigate(TELAS.TELA_LISTA_USUARIOS)}>
+        Lista de Usuários
       </BotaoCustomizado>
     </View>
   );

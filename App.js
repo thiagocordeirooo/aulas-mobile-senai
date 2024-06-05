@@ -8,12 +8,14 @@ import TelaPrincipal from './telas/TelaPrincipal/TelaPrincipal';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useEffect, useState } from 'react';
+import { CHAVES_SOTORAGE } from './comum/constantes/chaves-storage';
+import { pegarItemStorage } from './comum/servicos/servicoStorage';
 import TelaListaTarefas from './telas/TelaListaTarefas/TelaListaTarefas';
+import TelaListagemUsuarios from './telas/TelaListagemUsuarios/TelaListagemUsuarios';
 import TelaLogin from './telas/TelaLogin/TelaLogin';
 import TelaNovoUsuario from './telas/TelaNovoUsuario/TelaNovoUsuario';
-import { useEffect, useState } from 'react';
-import { pegarItemStorage } from './comum/servicos/servicoStorage';
-import { CHAVES_SOTORAGE } from './comum/constantes/chaves-storage';
+import TelaDetalhesUsuario from './telas/TelaDetalhesUsuario/TelaDetalhesUsuario';
 
 const Stack = createStackNavigator();
 
@@ -56,6 +58,9 @@ export default function App() {
           <Stack.Screen name={TELAS.TELA_CONTADOR} component={TelaContador} options={{ title: 'Contador' }} />
           <Stack.Screen name={TELAS.TELA_FORMULARIO} component={TelaFormulario} options={{ title: 'Formulário' }} />
           <Stack.Screen name={TELAS.TELA_LISTA_TAREFAS} component={TelaListaTarefas} options={{ title: 'Lista Terefas' }} />
+
+          <Stack.Screen name={TELAS.TELA_LISTA_USUARIOS} component={TelaListagemUsuarios} options={{ title: 'Lista Usuários' }} />
+          <Stack.Screen name={TELAS.TELA_DETALHES_USUARIOS} component={TelaDetalhesUsuario} options={{ title: 'Usuário' }} />
         </Stack.Navigator>
       </NavigationContainer>
 
