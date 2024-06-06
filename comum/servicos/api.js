@@ -1,9 +1,18 @@
 import axios from 'axios';
+import { CHAVES_SOTORAGE } from '../constantes/chaves-storage';
+import { pegarItemStorage } from './servicoStorage';
 
-const instancia = axios.create({
+let instancia = axios.create({
   baseURL: 'http://localhost:3000',
-  //   timeout: 1000,
-  headers: { 'X-Custom-Header': 'foobar' },
+});
+
+instancia.interceptors.request.use(async (config) => {
+  const usuarioLogado = await pegarItemStorage(CHAVES_SOTORAGE.USUARIO_LOGADO);
+  if (usuarioLogado) {
+    config.headers['x-usuario-logado'] = usuarioLogado.id;
+  }
+
+  return config;
 });
 
 export default instancia;
