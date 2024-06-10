@@ -1,21 +1,27 @@
+import { useToast } from 'native-base';
 import { useState } from 'react';
 import { Text, View } from 'react-native';
 import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
 import CampoTextoCustomizado from '../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado';
+import { CHAVES_SOTORAGE } from '../../comum/constantes/chaves-storage';
 import TELAS from '../../comum/constantes/telas';
 import api from '../../comum/servicos/api';
-import estilos from './TelaLoginStyle';
 import { atualizarItemStorage } from '../../comum/servicos/servicoStorage';
-import { CHAVES_SOTORAGE } from '../../comum/constantes/chaves-storage';
+import estilos from './TelaLoginStyle';
 
 const TelaLogin = (props) => {
+  const toast = useToast();
+
   const [campoUsuario, setCampoUsuario] = useState('');
   const [campoSenha, setCampoSenha] = useState('');
 
   const entrar = async () => {
     try {
       if (!campoUsuario.trim() || !campoSenha.trim()) {
-        alert('Preencha os campos!');
+        toast.show({
+          description: 'Preencha os campos!',
+          placement: 'top',
+        });
         return;
       }
 
@@ -24,7 +30,10 @@ const TelaLogin = (props) => {
       await atualizarItemStorage(CHAVES_SOTORAGE.USUARIO_LOGADO, response.data);
       props.navigation.navigate(TELAS.TELA_PRINCIPAL);
     } catch (error) {
-      alert(error.response.data);
+      toast.show({
+        description: error.response.data,
+        placement: 'top',
+      });
     }
   };
 
