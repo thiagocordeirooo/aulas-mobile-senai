@@ -28,7 +28,10 @@ const TelaLogin = (props) => {
       const response = await api.post('/logar', { email: campoUsuario, senha: campoSenha });
 
       await atualizarItemStorage(CHAVES_SOTORAGE.USUARIO_LOGADO, response.data);
-      props.navigation.navigate(TELAS.TELA_PRINCIPAL);
+      props.navigation.reset({
+        index: 0,
+        routes: [{ name: TELAS.TELA_PRINCIPAL }],
+      });
     } catch (error) {
       toast.show({
         description: error.response.data,

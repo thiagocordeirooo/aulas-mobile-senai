@@ -10,6 +10,7 @@ import TelaPrincipal from './telas/TelaPrincipal/TelaPrincipal';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
+import CabecalhoCustomizado from './comum/componentes/CabecalhoCustomizado/CabecalhoCustomizado';
 import { CHAVES_SOTORAGE } from './comum/constantes/chaves-storage';
 import { pegarItemStorage } from './comum/servicos/servicoStorage';
 import TelaDetalhesUsuario from './telas/TelaDetalhesUsuario/TelaDetalhesUsuario';
@@ -49,7 +50,7 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName={usuarioLogado ? TELAS.TELA_PRINCIPAL : TELAS.TELA_LOGIN}
-            screenOptions={{ cardStyle: { flex: 1 } }}
+            screenOptions={{ cardStyle: { flex: 1 }, header: CabecalhoCustomizado }}
           >
             <Stack.Group screenOptions={{ headerShown: false }}>
               <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} />
