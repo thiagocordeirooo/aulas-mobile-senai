@@ -22,6 +22,11 @@ const estilos = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  imagem: {
+    height: 24,
+    width: 24,
+    borderRadius: 12,
+  },
 });
 
 export default estilos;

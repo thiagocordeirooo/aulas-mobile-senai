@@ -18,6 +18,7 @@ import TelaListaTarefas from './telas/TelaListaTarefas/TelaListaTarefas';
 import TelaListagemUsuarios from './telas/TelaListagemUsuarios/TelaListagemUsuarios';
 import TelaLogin from './telas/TelaLogin/TelaLogin';
 import TelaNovoUsuario from './telas/TelaNovoUsuario/TelaNovoUsuario';
+import TelaPerfilUsuario from './telas/TelaPerfilUsuario/TelaPerfilUsuario';
 
 const Stack = createStackNavigator();
 
@@ -61,6 +62,8 @@ export default function App() {
             <Stack.Screen name={TELAS.TELA_CONTADOR} component={TelaContador} options={{ title: 'Contador' }} />
             <Stack.Screen name={TELAS.TELA_FORMULARIO} component={TelaFormulario} options={{ title: 'Formulário' }} />
             <Stack.Screen name={TELAS.TELA_LISTA_TAREFAS} component={TelaListaTarefas} options={{ title: 'Lista Terefas' }} />
+
+            <Stack.Screen name={TELAS.TELA_PERFIL_USUARIO} component={TelaPerfilUsuario} options={{ title: 'Meu Usuário' }} />
 
             <Stack.Screen name={TELAS.TELA_LISTA_USUARIOS} component={TelaListagemUsuarios} options={{ title: 'Lista Usuários' }} />
             <Stack.Screen name={TELAS.TELA_DETALHES_USUARIOS} component={TelaDetalhesUsuario} options={{ title: 'Usuário' }} />
