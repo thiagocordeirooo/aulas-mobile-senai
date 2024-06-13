@@ -7,6 +7,7 @@ const CORES = {
   TEXTO_CLARO: '#fff',
 
   FUNDO_PADRAO: '#f7f7f7',
+  FUNDO_ESCURO: '#282c35',
 
   BRANCA: '#fff',
 

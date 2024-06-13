@@ -7,7 +7,7 @@ import TelaContador from './telas/TelaContador/TelaContador';
 import TelaFormulario from './telas/TelaFormulario/TelaFormulario';
 import TelaPrincipal from './telas/TelaPrincipal/TelaPrincipal';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
 import CabecalhoCustomizado from './comum/componentes/CabecalhoCustomizado/CabecalhoCustomizado';
@@ -25,9 +25,16 @@ const Stack = createStackNavigator();
 const estilos = StyleSheet.create({
   todoApp: {
     flex: 1,
-    backgroundColor: CORES.FUNDO_PADRAO,
   },
 });
+
+const temaPadrao = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: CORES.FUNDO_ESCURO,
+  },
+};
 
 export default function App() {
   const [usuarioLogado, setUsuarioLogado] = useState();
@@ -48,7 +55,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <View style={estilos.todoApp}>
-        <NavigationContainer>
+        <NavigationContainer theme={temaPadrao}>
           <Stack.Navigator
             initialRouteName={usuarioLogado ? TELAS.TELA_PRINCIPAL : TELAS.TELA_LOGIN}
             screenOptions={{ cardStyle: { flex: 1 }, header: CabecalhoCustomizado }}
